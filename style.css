@@ -1,0 +1,131 @@
+/* Soft Beige & Brown - Portfolio Style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg: #F7F3EA;
+  --card: #FFFFFF;
+  --text: #4A3F35;
+  --heading: #6B4F3A;
+  --accent: #C9A66B;
+  --muted: #806A57;
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+}
+
+/* Sidebar */
+.sidebar{
+  position:fixed;
+  left:0;
+  top:0;
+  width:260px;
+  height:100vh;
+  background:linear-gradient(180deg,var(--card),#fbf7ef);
+  border-right:1px solid rgba(0,0,0,0.06);
+  padding:28px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+         /* Full height */
+  overflow-y: auto;     /* Enable vertical scroll */
+  overflow-x: hidden;
+  box-shadow: 8px 0 24px rgba(76,62,50,0.03);
+}
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.brand .logo{
+  width:64px;height:64px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),#e0c79b);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;color:var(--card);
+  box-shadow:0 6px 18px rgba(201,166,107,0.18);
+  font-size:20px;
+}
+.brand h2{font-size:18px;color:var(--heading);margin-bottom:2px}
+.brand p{font-size:13px;color:var(--muted)}
+
+/* Profile */
+.profile{
+  text-align:center;margin-top:6px;
+}
+.profile img{
+  width:120px;height:120px;border-radius:999px;border:3px solid var(--accent);
+  object-fit:cover;display:block;margin:0 auto 10px;
+}
+.cv-btn{
+  display:inline-block;padding:10px 14px;background:var(--heading);color: #fff;
+  border-radius:8px;text-decoration:none;font-weight:600;margin-top:8px;
+  box-shadow:0 6px 18px rgba(107,79,58,0.12);
+}
+.cv-btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(107,79,58,0.18)}
+
+/* Nav */
+.nav{
+  margin-top:12px;display:flex;flex-direction:column;gap:6px;
+  max-height: 60vh;     /* Limits nav height so it scrolls */
+  overflow-y: auto;
+  padding-right: 5px;   /* Prevents content overlap with scrollbar */
+}
+.nav a{
+  padding:12px 12px;border-radius:8px;color:var(--text);text-decoration:none;
+  display:flex;gap:10px;align-items:center;font-weight:600;font-size:15px;
+}
+.nav a .dot{width:10px;height:10px;border-radius:4px;background:transparent}
+.nav a:hover{background:rgba(0,0,0,0.03)}
+.nav a.active{background:linear-gradient(90deg, rgba(201,166,107,0.12), rgba(201,166,107,0.06));border-left:4px solid var(--accent)}
+
+/* Main content */
+.main{
+  margin-left:300px;padding:40px 64px;
+  min-height:100vh;
+}
+.header{
+  display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;
+}
+.header h1{color:var(--heading);font-size:28px}
+.header p{color:var(--muted);font-size:14px}
+
+/* Sections & cards */
+.section{margin-bottom:40px;animation:fadeUp .6s ease both;opacity:0;transform:translateY(18px)}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+.card{
+  background:var(--card);padding:20px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);
+  box-shadow:0 8px 22px rgba(76,62,50,0.04);margin-top:14px;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(76,62,50,0.06)}
+.card h3{color:var(--heading);margin-bottom:6px}
+.small{color:var(--muted);font-size:13px;margin-bottom:8px}
+
+/* Grid for projects */
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:12px;
+}
+
+/* Contact links */
+.contact-list a{display:block;padding:10px 12px;background:linear-gradient(180deg,#fff,#fbf9f6);border-radius:10px;margin-bottom:8px;text-decoration:none;color:var(--text);font-weight:600}
+.contact-list a:hover{box-shadow:0 10px 30px rgba(201,166,107,0.08)}
+
+/* Responsive */
+@media (max-width:900px){
+  .sidebar{position:relative;width:100%;height:auto;border-right:none;display:flex;flex-direction:row;align-items:center;padding:12px 16px;gap:12px}
+  .profile img{width:56px;height:56px}
+  .main{margin-left:0;padding:20px}
+  .nav{flex-direction:row;gap:8px;overflow:auto}
+  .nav a{padding:8px 10px;font-size:13px}
+}
+
+/* Utility */
+.center{display:flex;align-items:center;justify-content:center}
